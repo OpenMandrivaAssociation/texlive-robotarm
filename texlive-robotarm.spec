@@ -1,6 +1,6 @@
 Name:		texlive-robotarm
 Version:	63116
-Release:	1
+Release:	2
 Summary:	TikZ powered LaTeX package to draw parameterized 2D robot arms
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/robotarm

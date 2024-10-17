@@ -3,7 +3,7 @@ Version:	63116
 Release:	2
 Summary:	TikZ powered LaTeX package to draw parameterized 2D robot arms
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/robotarm
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/robotarm
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/robotarm.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/robotarm.doc.r%{version}.tar.xz

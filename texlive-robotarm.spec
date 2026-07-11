@@ -1,39 +1,22 @@
-Name:		texlive-robotarm
-Version:	63116
-Release:	2
+%global tl_name robotarm
+%global tl_revision 63116
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.1
+Release:	%{tl_revision}.1
 Summary:	TikZ powered LaTeX package to draw parameterized 2D robot arms
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/robotarm
+URL:		https://www.ctan.org/tex-archive/graphics/pgf/contrib/robotarm
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/robotarm.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/robotarm.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/robotarm.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/robotarm.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/robotarm.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/robotarm.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This LaTeX package uses TikZ to draw parameterized 2D robot
-arms, for example to be used in educational material.
+This LaTeX package uses TikZ to draw parameterized 2D robot arms, for
+example to be used in educational material.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/robotarm
-%{_texmfdistdir}/tex/latex/robotarm
-%doc %{_texmfdistdir}/doc/latex/robotarm
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
